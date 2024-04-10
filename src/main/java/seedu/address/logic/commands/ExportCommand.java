@@ -26,7 +26,7 @@ public class ExportCommand extends Command {
     public static final String COMMAND_WORD = "export";
     public static final String MESSAGE_SUCCESS = "Contacts from address book have been exported!";
     public static final String MESSAGE_FAILURE = "Something went wrong! Make sure export.csv is not open!";
-    public static final String EXPORT_PATH = "./export/export.csv";
+    public static final String EXPORT_PATH = "./export.csv";
     private Set<EventTag> exported = new HashSet<>();
 
     @Override

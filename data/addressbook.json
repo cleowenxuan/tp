@@ -1,87 +1,20 @@
 {
   "persons" : [ {
-    "name" : "Alex Yeoh",
-    "phone" : "99999999",
-    "email" : "alexyeoh@example.com",
-    "address" : "Blk 30 Geylang Street 29, #06-40",
-    "tags" : [ "operations", "logistics" ],
-    "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
-    } ]
-  }, {
-    "name" : "Bernice Yu",
-    "phone" : "99272758",
-    "email" : "berniceyu@example.com",
-    "address" : "Blk 30 Lorong 3 Serangoon Gardens, #07-18",
-    "tags" : [ "marketing" ],
-    "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
-    } ]
-  }, {
-    "name" : "Charlotte Oliveiro",
-    "phone" : "93210283",
-    "email" : "charlotte@example.com",
-    "address" : "Blk 11 Ang Mo Kio Street 74, #11-04",
-    "tags" : [ "logistics" ],
-    "eventTags" : [ {
-      "tagName" : "Rag",
-      "description" : "Rag Event 2024",
-      "startDate" : "2024-04-05T14:00:00",
-      "endDate" : "2024-04-05T16:00:00"
-    } ]
-  }, {
-    "name" : "David Li",
-    "phone" : "91031282",
-    "email" : "lidavid@example.com",
-    "address" : "Blk 436 Serangoon Gardens Street 26, #16-43",
-    "tags" : [ "publicity" ],
-    "eventTags" : [ {
-      "tagName" : "Rag",
-      "description" : "Rag Event 2024",
-      "startDate" : "2024-04-05T14:00:00",
-      "endDate" : "2024-04-05T16:00:00"
-    } ]
-  }, {
-    "name" : "Irfan Ibrahim",
-    "phone" : "92492021",
-    "email" : "irfan@example.com",
-    "address" : "Blk 47 Tampines Street 20, #17-35",
-    "tags" : [ "publicity" ],
-    "eventTags" : [ {
-      "tagName" : "Rag",
-      "description" : "Rag Event 2024",
-      "startDate" : "2024-04-05T14:00:00",
-      "endDate" : "2024-04-05T16:00:00"
-    } ]
-  }, {
-    "name" : "Roy Balakrishnan",
-    "phone" : "92624417",
-    "email" : "royb@example.com",
-    "address" : "Blk 45 Aljunied Street 85, #11-31",
-    "tags" : [ "VPD" ],
-    "eventTags" : [ {
-      "tagName" : "Rag",
-      "description" : "Rag Event 2024",
-      "startDate" : "2024-04-05T14:00:00",
-      "endDate" : "2024-04-05T16:00:00"
-    } ]
-  }, {
     "name" : "Tom",
     "phone" : "91234812",
     "email" : "hi@mail.com",
     "address" : "NUS",
     "tags" : [ "notcool", "fine", "interesting" ],
     "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
+      "tagName" : "orientation",
+      "description" : "Orientation!",
+      "startDate" : "2024-04-04T02:02:02",
+      "endDate" : "2024-04-05T02:02:02"
+    }, {
+      "tagName" : "camping",
+      "description" : "CAMP!!",
+      "startDate" : "2024-04-04T02:02:02",
+      "endDate" : "2024-04-05T02:02:02"
     } ]
   }, {
     "name" : "John",
@@ -90,10 +23,10 @@
     "address" : "NTU",
     "tags" : [ "notcool" ],
     "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
+      "tagName" : "orientation",
+      "description" : "Orientation!",
+      "startDate" : "2024-04-04T02:02:02",
+      "endDate" : "2024-04-05T02:02:02"
     } ]
   }, {
     "name" : "Ben",
@@ -102,99 +35,22 @@
     "address" : "NA",
     "tags" : [ "s" ],
     "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
-    } ]
-  }, {
-    "name" : "Ann",
-    "phone" : "82882919",
-    "email" : "Ann@mail.com",
-    "address" : "NA",
-    "tags" : [ "head", "publicity" ],
-    "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
-    } ]
-  }, {
-    "name" : "Amy",
-    "phone" : "82882919",
-    "email" : "Amy@mail.com",
-    "address" : "AMK Blk 91",
-    "tags" : [ "head", "operations" ],
-    "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
-    } ]
-  }, {
-    "name" : "Betty",
-    "phone" : "93882919",
-    "email" : "Betty@mail.com",
-    "address" : "AMK Blk 10",
-    "tags" : [ "logistics" ],
-    "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
-    } ]
-  }, {
-    "name" : "Zack",
-    "phone" : "82820119",
-    "email" : "zack@mail.com",
-    "address" : "AMK Blk 10",
-    "tags" : [ "logistics" ],
-    "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
-    } ]
-  }, {
-    "name" : "Xan",
-    "phone" : "82882919",
-    "email" : "xan@mail.com",
-    "address" : "Bishan Blk 10",
-    "tags" : [ "logistics" ],
-    "eventTags" : [ {
-      "tagName" : "Rag",
-      "description" : "Rag Event 2024",
-      "startDate" : "2024-04-05T14:00:00",
-      "endDate" : "2024-04-05T16:00:00"
-    }, {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
-    } ]
-  }, {
-    "name" : "John Doe",
-    "phone" : "98765432",
-    "email" : "johnd@example.com",
-    "address" : "311, Clementi Ave 2, #02-25",
-    "tags" : [ ],
-    "eventTags" : [ {
-      "tagName" : "Flag",
-      "description" : "Flag Event 2024",
-      "startDate" : "2024-04-10T18:00:00",
-      "endDate" : "2024-04-10T22:00:00"
+      "tagName" : "camping",
+      "description" : "CAMP!!",
+      "startDate" : "2024-04-04T02:02:02",
+      "endDate" : "2024-04-05T02:02:02"
     } ]
   } ],
   "tagList" : [ "s", "notcool", "fine", "interesting" ],
   "eventTagList" : [ {
-    "tagName" : "Rag",
-    "description" : "Rag Event 2024",
-    "startDate" : "2024-04-05T14:00:00",
-    "endDate" : "2024-04-05T16:00:00"
+    "tagName" : "orientation",
+    "description" : "Orientation!",
+    "startDate" : "2024-04-04T02:02:02",
+    "endDate" : "2024-04-05T02:02:02"
   }, {
-    "tagName" : "Flag",
-    "description" : "Flag Event 2024",
-    "startDate" : "2024-04-10T18:00:00",
-    "endDate" : "2024-04-10T22:00:00"
+    "tagName" : "camping",
+    "description" : "CAMP!!",
+    "startDate" : "2024-04-04T02:02:02",
+    "endDate" : "2024-04-05T02:02:02"
   } ]
 }
