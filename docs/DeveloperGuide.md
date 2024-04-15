@@ -21,7 +21,6 @@ This project is based on [AddressBook Level 3](https://se-education.org/docs/tem
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
-<div style="page-break-after: always;"></div>
 
 ## **Design**
 
@@ -205,8 +204,6 @@ The following activity diagram summarizes what happens when a user executes a de
     * Pros: Able to see which name you want to delete by searching for their name.
     * Cons: Having to search and delete is slower than simply deleting the person by name.
 
-<div style="page-break-after: always;"></div>
-
 ### Editing Contacts by Index/Name
 As student leaders manage multiple events, they often need to update contact information swiftly within EventBook. By introducing an edit feature, student leaders can efficiently modify contact details either by name or index, enhancing their productivity and streamlining their workflow.
 
@@ -237,8 +234,6 @@ The following sequence diagram shows how an edit operation goes through the `Log
 The following activity diagram summarizes what happens when a user executes an edit command:
 
 <puml src="diagrams/EditActivityDiagram.puml" width="750" />
-
-<div style="page-break-after: always;"></div>
 
 ### Creating and Deleting Tag and EventTag Objects
 
@@ -288,7 +283,6 @@ contacts in the EventBook.
 2. The user executes `dtag Friend`, deleting the Tag object named `Friend`.
 3. All instances of `Friend` will be deleted from the EventBook.
 
-<div style="page-break-after: always;"></div>
 
 ### Assign Tag command
 The `assign` command allows users to assign Tags and Events to contacts within EventBook to be displayed as a label in
@@ -320,9 +314,6 @@ In order to allow for assignment of `Tags` and `EventTags` to `Person` objects, 
 Previously, `Person` was defined to be immutable such that no changes could be made to their tags or fields. With the
 implementation of `assign`, changes had ot be made to allow mutability of each `Person` object's TagList and EventTagList. 
 
-
-<div style="page-break-after: always;"></div>
-
 ### Search by Tags command
 The search by tag feature allows for easy searching of contact by `tag` to view people easily. This is achieved by filtering people in the contact list with the tags
 to see if they have the tag you are searching assigned to them.
@@ -344,7 +335,6 @@ This will update the `filteredPersons` field of ModelManager class to only conta
 that a tag was created. The message is stored in the `SearchTagCommand` class itself.
 ![](images/DG/SearchCommandExecute.png)
 
-<div style="page-break-after: always;"></div>
 
 ### Switch Event command
 The event switching feature allows for easy switching between event tabs to view event members. This is achieved by the introducing event-specific filtering to EventBook.
@@ -379,7 +369,6 @@ When `executeCommand::MainWindow` is called to update the UI after the execution
   1. DEFAULT_TAG: `list` command was executed, call `EventListPanel::clearEventSelection` to switch highlighted tab back to `All` tab. 
   2. **Not** DEFAULT_TAG: `switch` command was executed, call `EventListPanel::selectEvent` with the EventTag to switch highlighted tab to corresponding Event tab. 
 
-<div style="page-break-after: always;"></div>
   
 ### Importing and Exporting as .csv file
 
@@ -414,7 +403,6 @@ An example usage scenario illustrates how the export feature operates:
    `Name | Number | Email | Address | Tag`
 
 --------------------------------------------------------------------------------------------------------------------
-<div style="page-break-after: always;"></div>
 
 ## **Documentation, logging, testing, configuration, dev-ops**
 
