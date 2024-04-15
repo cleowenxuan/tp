@@ -383,35 +383,46 @@ When `executeCommand::MainWindow` is called to update the UI after the execution
   
 ### Importing and Exporting as .csv file
 
-As student leaders, a common and easily accessible file format type for event contacts would be .csv. Eventbook
-aims to support the ability to import and export contacts using .csv files to facilitate fast and effective contact
-upload and sharing.
+The import/export commands allow one to easily share contact data.
+As student leaders, a common and easily accessible file format type for event contacts would be .csv. 
+Eventbook supports the ability to import and export contacts using .csv files to facilitate fast and effective contact upload and sharing.
 
-The proposed mechanism is as follows:
-* Import: Facilitated by the `import` command that takes a path parameter. The file named `import.csv` at the given
-  path will be read in a set format. The contact details in the csv will then be imported into the address book following
-  the format of the add command (Implication being that each field in the .csv should be compatible with the current
-  implementation of the address book, and follow all conventions of the add command like formatting and non-duplicates)
-* Export: Facilitated by the `export` command that takes no parameters. The command will access the `UniquePersonList`
-  found in the `1AddressBook` of the `Model` and parse through the relevant data, formatting it into the relevant fields.
-
-The .csv should be formatted with the first row having the non-case sensitive headers (separate cells marked with `|`):
-* `Name | Number | Email | Address | Tag`
-
-An example usage scenario illustrates how the import feature operates:
-1. The user launches the application. The application will be in its initial state showing the full list of contacts
-   in the EventBook.
-2. The user executes `import ./import/import.csv` , with import.csv having 2 rows:
-    1. `Name | Number | Email | Address | Tag`
-    2. `John | 94756383 | john@mail.com | NUS UTown | BestFriend`
-3. The contact `John` is imported into the address book, with parameters as above.
+#### Implementation (Export)
+* The Export feature is facilitated by the ExportCommand class which extends the Command class.
+* In `ExportCommand::execute`, a reference to the current model is passed to the `ExportCommand::exportFile` call
+* `ExportCommand::exportFile` accesses the model's Person data through `model.getFilteredPersonList()`
+* For each Person, `ExportCommand::exportFile` accesses their details through the respective getters (e.g.`Person::getName()`)
+  and writes their details to a .csv file through a FileWriter object
 
 An example usage scenario illustrates how the export feature operates:
 1. The user launches the application. The application will be in its initial state showing the full list of contacts
    in the EventBook.
 2. The user executes `export` to export all contacts
-3. All contacts in the address book will be exported to ./export/export.csv according to the format
-   `Name | Number | Email | Address | Tag`
+3. All contacts in the address book will be exported to ./export/export.csv according to the format given above
+
+#### Implementation (Import)
+* The Import feature is facilitated by the following classes:
+    * `ImportCommand` which extends Command
+    * `ImportCommandParser` which extends Parser
+* In `ImportCommandParser::parse`, the user input is parsed to determine the path of the file to be imported,
+  and an `ImportCommand` object is returned with the parsed path (a default path is given if none is specified)
+* In `ImportCommand::execute`, a reference to the current model is passed and the following are called:
+  * `ImportCommand::parse` parses the given file and stores the data in an `ArrayList` object. The data
+  * `ImportCommand::checkFields` is called on the parsed data to check the fields. The field data is subsequently removed
+  * `ImportCommand::addPersons` uses the parsed Person data and simulates adding them to the model through the Add command
+  * `ImportCommand::loadEventTags` adds and assigns EventTags to the model separately, since the Add command does not support this functionality
+
+An example usage scenario illustrates how the import feature operates:
+1. The user launches the application. The application will be in its initial state showing the full list of contacts
+   in the EventBook.
+2. The user executes `import f/./import/import.csv` , with import.csv having 2 rows:
+    1. `NAME,NUMBER,EMAIL,ADDRESS,EVENTS,TAGS`
+    2. `John,94756383,john@mail.com,NUS,Orientation,BestFriend|Cool`
+3. The contact `John` is imported into the address book, with parameters as above (He is assigned the existing EventTag Orientation as well)
+
+#### Format of the .csv files
+* The format of the first line of the csv should contain the fields:
+  `NAME,NUMBER,EMAIL,ADDRESS,EVENTS,TAGS` (.csv is comma delimited, so that means each field should be in their own cell)    
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -851,7 +862,7 @@ switch hello
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## **Appendix: Enhancement**
+## **Appendix: Enhancement (Team Size 5)**
 
 1. **To show custom error for wrong time in `ctag` command**: When creating event tags with the `ctag` command,
 you will not get notified correctly on why you failed when you input the incorrect time(like 25:73:74 in the 24-hour 
@@ -883,4 +894,7 @@ We plane to make the window readjust properly for the future app instead of disp
 7. **Length inputs to be displayed in full in the EventBook**: In the current implementation, 
 lengthy inputs for the fields appear to not be displayed in full by the UI as shown in the image below. ![](images/DG/DG_Enhancement_Lengthy.png)
 We plan to make the display in full for up to 3 lines' length of information in the contact panel.
+8. **Import to support ignoring contacts that already exist**: The current implementation will throw an error
+when importing a file contacts that have the same name as an existing contact. We plan to make it so the import
+command will still import non-conflicting contacts when this happens.
 
