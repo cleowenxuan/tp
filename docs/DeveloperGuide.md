@@ -12,7 +12,7 @@
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Acknowledgements**
-This project is based on [AddressBook Level 3](https://se-education.org/docs/templates.html#addressbook-level-3-ab3). 
+This project is based on [AddressBook Level 3](https://se-education.org/docs/templates.html#addressbook-level-3-ab3).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -130,8 +130,8 @@ How the parsing works:
 The `Model` component,
 
 * Stores the EventBook data i.e., all `Person` objects (which are contained in a `UniquePersonList` object) and all `Tag` objects (which are contained in a `UniqueTagList` object).
-* Not modelled in diagram due to limitations of PlantUML: `UniqueTagList` object storing EventTags. 
-  * The `UniqueTagList` class involves the use of generics to allow it to store both `Tag` and `EventTag` objects. 
+* Not modelled in diagram due to limitations of PlantUML: `UniqueTagList` object storing EventTags.
+  * The `UniqueTagList` class involves the use of generics to allow it to store both `Tag` and `EventTag` objects.
   * Each EventBook stores a list of tags of type `UniqueTagList<Tag>` and a list of event tags of type `UniqueTagList<EventTag>`. However PlantUML is unable to capture the <Tag> and <EventTag> portion, hence we were unable to include the EventTag list in the diagram.
 * Stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * Stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
@@ -171,7 +171,7 @@ Given below is an example usage scenario and how delete mechanism behaves at eac
 
 Step 1: The user launches the application. The application will be in its initial state showing the full list of contacts in the EventBook.
 
-Step 2: The user executes `delete John Doe` command to delete the person named John Doe in the EventBook. 
+Step 2: The user executes `delete John Doe` command to delete the person named John Doe in the EventBook.
 
 <box type="info" seamless>
 
